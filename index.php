@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: WPGIT
-Plugin URI: https://github.com/onigetoc/wpgit
-Description: WPGIT | Search and install Wordpress themes and plugins from Github:
+Plugin Name: GitHub Seeker
+Plugin URI: https://github.dev/cvladan/github-seeker/
+Description: Search plugins and themes on GitHub
 Author: onigetoc
-Version: 0.1
-Author URI: http://www.wpgit.org
-GitHub Plugin URI: https://github.com/onigetoc/wpgit
+Version: 0.11
+Author URI: https://github.dev/cvladan/github-seeker/
+GitHub Plugin URI: https://github.dev/cvladan/github-seeker
 GitHub Branch:     master
 */
 
