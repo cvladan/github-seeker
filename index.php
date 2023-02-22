@@ -3,7 +3,7 @@
 Plugin Name: GitHub Seeker
 Plugin URI: https://github.dev/cvladan/github-seeker/
 Description: Search plugins and themes on GitHub
-Author: onigetoc
+Author: cvladan
 Version: 0.11
 Author URI: https://github.dev/cvladan/github-seeker/
 GitHub Plugin URI: https://github.dev/cvladan/github-seeker
@@ -117,29 +117,25 @@ function wpgit_settings()
 
     <?php } // End Setting function
 
-// Admin plugin setting
-function wpgit_admin_menu()
+# Admin plugin setting
+#
+add_action('admin_menu', function ()
 {
-    // this is where we add our plugin to the admin menu
-    add_options_page('WPGIT settings', 'WPGIT', 'read', basename(__FILE__), 'wpgit_settings');
-}
+    add_options_page('GitHub Seeker', 'GitHub Search', 'read', basename(__FILE__), 'wpgit_settings');
+});
 
-add_action('admin_menu', 'wpgit_admin_menu');
+# Links in plugin list
+#
+add_action('plugin_action_links_' . plugin_basename(__FILE__), function ($links) {
 
+    $new_links = [];
 
-
-add_action('plugin_action_links_' . plugin_basename(__FILE__), 'wpgit_adminbar');
-function wpgit_adminbar($links){
-
-    $new_links = array();
-
-    $adminlink = get_bloginfo('wpurl').'/wp-admin/';
-
+    $adminlink = get_bloginfo('wpurl') . '/wp-admin/';
     $wpgit_link = 'http://wpgit.org';
 
-    $new_links[] = '<a href="'.$adminlink.'options-general.php?page=wpgit.php">Search</a>';
+    $new_links[] = '<a href="' . $adminlink . 'options-general.php?page=wpgit.php">Search</a>';
 
-    return array_merge($links,$new_links );
+    return array_merge($links, $new_links);
+});
 
-}
 ?>

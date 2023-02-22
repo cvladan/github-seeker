@@ -141,8 +141,8 @@ jQuery(document).ready(function ($) {
                     //alert(timeSince('2015-11-23T23:00:32Z'));
                     var timeago = timeSince(item.updated_at) + ' ago';
 
-                    html += '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4"><div class="well well-sm"><div class="row">';
-                    html += '<div class="col-xs-3 col-md-3 text-center paddingRight">';
+                    html += '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4"><div class="well well-lg"><div class="row">';
+                    html += '<div class="col-xs-2 col-md-2 text-center paddingRight">';
                     html += '<img src="' + item.owner.avatar_url + '" class="img-rounded img-responsive" /></div>';
 
                     html += '<div class="col-xs-9 col-md-9 section-box">';
@@ -172,11 +172,11 @@ jQuery(document).ready(function ($) {
 
                     html += '</div></div></div></div></div></div></div></div></div>';
 
-                    //$("#results").append('<div class="row"><img src="'+item.owner.avatar_url+'" class="avatar"><span>'+item.description+'</span><span class="url"><a href="'+item.html_url+'" target="_blank">View on Github</a></span></div>');
+                    // $("#results").append('<div class="row"><img src="'+item.owner.avatar_url+'" class="avatar"><span>'+item.description+'</span><span class="url"><a href="'+item.html_url+'" target="_blank">View on Github</a></span></div>');
 
                 });
 
-                //html += '<div id="prevnext"><span class="previous">< Previous </span> <span class="Next"> | Next ></span></div>';
+                // html += '<div id="prevnext"><span class="previous">< Previous </span> <span class="Next"> | Next ></span></div>';
 
                 $("#wpgit_results").html(html);
                 $('#prevnext').css("display", "block");
