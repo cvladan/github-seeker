@@ -118,18 +118,14 @@ function ghs_settings()
     <?php } // End Setting function
 
 # Admin plugin setting
-#
 add_action('admin_menu', function ()
 {
     add_submenu_page('tools.php', 'GitHub Seeker', 'GitHub Search', 'read', 'github-seeker', 'ghs_settings');
 });
 
 # Add link in plugin list
-#
 add_filter( 'plugin_action_links', function ( $plugin_links, $plugin_file ) {
 
-    error_log($plugin_file);
-    error_log(basename(plugin_dir_path(__FILE__)) . '/index.php');
     if ($plugin_file !== basename(plugin_dir_path(__FILE__)) . '/index.php') {
         return $plugin_links;
     }
