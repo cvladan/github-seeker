@@ -33,7 +33,7 @@ add_action( 'admin_enqueue_scripts', 'wpgit_admin_scripts' );
 
 
 /* Plugin setting and post */
-function wpgit_settings()
+function ghs_settings()
 {
 
     /* Get Paths */
@@ -121,21 +121,18 @@ function wpgit_settings()
 #
 add_action('admin_menu', function ()
 {
-    add_options_page('GitHub Seeker', 'GitHub Search', 'read', basename(__FILE__), 'wpgit_settings');
+    add_submenu_page('tools.php', 'GitHub Seeker', 'GitHub Search', 'read', 'github-seeker', 'ghs_settings');
 });
 
-# Links in plugin list
+# Add link in plugin list
 #
-add_action('plugin_action_links_' . plugin_basename(__FILE__), function ($links) {
+add_filter( 'plugin_action_links', function ( $plugin_links, $plugin_file ) {
 
-    $new_links = [];
+    error_log($plugin_file);
+    error_log(basename(plugin_dir_path(__FILE__)) . '/index.php');
+    if ($plugin_file !== basename(plugin_dir_path(__FILE__)) . '/index.php') {
+        return $plugin_links;
+    }
 
-    $adminlink = get_bloginfo('wpurl') . '/wp-admin/';
-    $wpgit_link = 'http://wpgit.org';
-
-    $new_links[] = '<a href="' . $adminlink . 'options-general.php?page=wpgit.php">Search</a>';
-
-    return array_merge($links, $new_links);
-});
-
-?>
+    return array_merge($plugin_links, [ '<a href="' . esc_url(admin_url('tools.php?page=github-seeker')) . '">Search</a>' ] );
+}, 10, 2 );

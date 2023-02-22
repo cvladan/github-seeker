@@ -8,4 +8,4 @@ GitHub Seeker is a WordPress plugin that allows you to efficiently search throug
 
 ![](https://raw.githubusercontent.com/cvladan/github-seeker/master/screenshot-2.gif)  
 
-[youtube https://www.youtube.com/watch?v=EyC_8cHbYRo]
+[Video](https://www.youtube.com/watch?v=EyC_8cHbYRo)
