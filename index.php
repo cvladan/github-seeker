@@ -1,14 +1,22 @@
 <?php
-/*
-Plugin Name: GitHub Seeker
-Plugin URI: https://github.dev/cvladan/github-seeker/
-Description: Search plugins and themes on GitHub
-Author: cvladan
-Version: 0.11
-Author URI: https://github.dev/cvladan/github-seeker/
-GitHub Plugin URI: https://github.dev/cvladan/github-seeker
-GitHub Branch:     master
-*/
+/**
+ * Plugin Name:        GitHub Seeker
+ * Plugin URI:         https://github.dev/cvladan/github-seeker/
+ * Description:        Search plugins and themes on GitHub
+ * Author:             Vladan Colovic
+ * Author URI:         https://github.com/cvladan/
+ * Text Domain:        github-seeker
+ * Domain Path:        /languages
+ * Version:            0.2.0
+ *
+ * GitHub Plugin URI:  https://github.com/cvladan/github-seeker/
+ * GitHub Branch:      master
+ *
+ * @package            github-seeker
+ *
+ */
+
+defined('ABSPATH') or die;
 
 /* add js and css file to admin plugin */
 function wpgit_admin_scripts() { 
